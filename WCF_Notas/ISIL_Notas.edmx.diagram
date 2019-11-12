@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="292ed654065a4ddcb15f331d2fcff2d9" Name="Diagram1" ZoomLevel="74">
+        <EntityTypeShape EntityType="ISILNotasModel.ALUMNO" Width="1.5" PointX="3" PointY="7" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISILNotasModel.CARRERA" Width="1.5" PointX="0.75" PointY="5.125" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISILNotasModel.CICLO" Width="1.5" PointX="3" PointY="4" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISILNotasModel.CLASE" Width="1.5" PointX="7.5" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISILNotasModel.CURSO" Width="1.5" PointX="5.25" PointY="0.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISILNotasModel.DISTRITO" Width="1.5" PointX="0.75" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISILNotasModel.INCIDENCIA" Width="1.5" PointX="5.25" PointY="8" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISILNotasModel.MATRICULA" Width="1.5" PointX="5.25" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISILNotasModel.MATRICULA_CURSO" Width="1.5" PointX="7.5" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISILNotasModel.MATRICULA_CURSO_CLASE" Width="1.5" PointX="9.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISILNotasModel.NOTA" Width="1.5" PointX="9.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISILNotasModel.PROFESOR" Width="1.5" PointX="3" PointY="12.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISILNotasModel.PROFESOR_CURSO" Width="1.5" PointX="5.25" PointY="12.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISILNotasModel.SEDE" Width="1.5" PointX="3" PointY="1.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISILNotasModel.sysdiagrams" Width="1.5" PointX="9.75" PointY="8.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="ISILNotasModel.TIPO_NOTA" Width="1.5" PointX="7.5" PointY="2.25" IsExpanded="true" />
+        <AssociationConnector Association="ISILNotasModel.fk_alumno_id_carrera" ManuallyRouted="false" />
+        <AssociationConnector Association="ISILNotasModel.fk_alumno_id_distrito" ManuallyRouted="false" />
+        <AssociationConnector Association="ISILNotasModel.fk_incidencia_dni_alu" ManuallyRouted="false" />
+        <AssociationConnector Association="ISILNotasModel.fk_matricula_dni_alu" ManuallyRouted="false" />
+        <AssociationConnector Association="ISILNotasModel.fk_matricula_id_ciclo" ManuallyRouted="false" />
+        <AssociationConnector Association="ISILNotasModel.fk_clase_id_sede" ManuallyRouted="false" />
+        <AssociationConnector Association="ISILNotasModel.fk_matricula_curso_clase_id_clase" ManuallyRouted="false" />
+        <AssociationConnector Association="ISILNotasModel.fk_curso_id_sede" ManuallyRouted="false" />
+        <AssociationConnector Association="ISILNotasModel.fk_matricula_curso_id_curso" ManuallyRouted="false" />
+        <AssociationConnector Association="ISILNotasModel.fk_profesor_curso_id_curso" ManuallyRouted="false" />
+        <AssociationConnector Association="ISILNotasModel.fk_profesor_id_distrito" ManuallyRouted="false" />
+        <AssociationConnector Association="ISILNotasModel.fk_matricula_curso_id_matricula" ManuallyRouted="false" />
+        <AssociationConnector Association="ISILNotasModel.fk_matricula_curso_clase_id_matricula_curso" ManuallyRouted="false" />
+        <AssociationConnector Association="ISILNotasModel.fk_nota_id_matricula_curso" ManuallyRouted="false" />
+        <AssociationConnector Association="ISILNotasModel.fk_nota_id_tipo_nota" ManuallyRouted="false" />
+        <AssociationConnector Association="ISILNotasModel.fk_profesor_curso_dni_pro" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>
