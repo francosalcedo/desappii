@@ -1,0 +1,3 @@
+Create Procedure usp_IncidenciasPositivas
+as
+Select id_incidencia,impacto_desc, dni_alu from INCIDENCIA where impacto = '1';
