@@ -194,6 +194,9 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>ISIL_Notas.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <None Include="ConnectionStrings.config">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </None>
     <None Include="ISIL_Notas.edmx.diagram">
       <DependentUpon>ISIL_Notas.edmx</DependentUpon>
     </None>
@@ -230,6 +233,14 @@
       </FlavorProperties>
     </VisualStudio>
   </ProjectExtensions>
+  <PropertyGroup>
+    <PreBuildEvent>
+    </PreBuildEvent>
+  </PropertyGroup>
+  <PropertyGroup>
+    <PostBuildEvent>
+    </PostBuildEvent>
+  </PropertyGroup>
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
   <Target Name="BeforeBuild">
