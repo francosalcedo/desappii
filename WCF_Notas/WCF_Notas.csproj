@@ -136,6 +136,12 @@
     <Compile Include="TIPO_NOTA.cs">
       <DependentUpon>ISIL_Notas.tt</DependentUpon>
     </Compile>
+    <Compile Include="usp_ConsultarAlumnoPorCiclo1_Result.cs">
+      <DependentUpon>ISIL_Notas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_ConsultarAlumnoPorCiclo_Result.cs">
+      <DependentUpon>ISIL_Notas.tt</DependentUpon>
+    </Compile>
     <Compile Include="usp_ConsultarAlumnosPorDistritoYCarrera_Result.cs">
       <DependentUpon>ISIL_Notas.tt</DependentUpon>
     </Compile>
@@ -158,6 +164,18 @@
       <DependentUpon>ISIL_Notas.tt</DependentUpon>
     </Compile>
     <Compile Include="usp_ConsultarNotasAlumno_Result.cs">
+      <DependentUpon>ISIL_Notas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_ConsultarProfesorPorCurso1_Result.cs">
+      <DependentUpon>ISIL_Notas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_ConsultarProfesorPorCurso2_Result.cs">
+      <DependentUpon>ISIL_Notas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_ConsultarProfesorPorCurso_Result.cs">
+      <DependentUpon>ISIL_Notas.tt</DependentUpon>
+    </Compile>
+    <Compile Include="usp_ConsultarProfesorPorDistrito_Result.cs">
       <DependentUpon>ISIL_Notas.tt</DependentUpon>
     </Compile>
     <Compile Include="usp_ConsultarProfesor_Result.cs">

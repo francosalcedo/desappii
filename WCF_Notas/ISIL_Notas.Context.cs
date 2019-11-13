@@ -378,5 +378,59 @@ namespace WCF_Notas
     
             return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_IncidenciaAlumno_Result>("usp_IncidenciaAlumno", dni_aluParameter);
         }
+    
+        public virtual ObjectResult<usp_ConsultarAlumnoPorCiclo_Result> usp_ConsultarAlumnoPorCiclo(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ConsultarAlumnoPorCiclo_Result>("usp_ConsultarAlumnoPorCiclo", idParameter);
+        }
+    
+        public virtual ObjectResult<usp_ConsultarAlumnoPorCiclo1_Result> usp_ConsultarAlumnoPorCiclo1(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ConsultarAlumnoPorCiclo1_Result>("usp_ConsultarAlumnoPorCiclo1", idParameter);
+        }
+    
+        public virtual ObjectResult<usp_ConsultarProfesorPorCurso_Result> usp_ConsultarProfesorPorCurso(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ConsultarProfesorPorCurso_Result>("usp_ConsultarProfesorPorCurso", idParameter);
+        }
+    
+        public virtual ObjectResult<usp_ConsultarProfesorPorCurso1_Result> usp_ConsultarProfesorPorCurso1(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ConsultarProfesorPorCurso1_Result>("usp_ConsultarProfesorPorCurso1", idParameter);
+        }
+    
+        public virtual ObjectResult<usp_ConsultarProfesorPorCurso2_Result> usp_ConsultarProfesorPorCurso2(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ConsultarProfesorPorCurso2_Result>("usp_ConsultarProfesorPorCurso2", idParameter);
+        }
+    
+        public virtual ObjectResult<usp_ConsultarProfesorPorDistrito_Result> usp_ConsultarProfesorPorDistrito(Nullable<int> id)
+        {
+            var idParameter = id.HasValue ?
+                new ObjectParameter("id", id) :
+                new ObjectParameter("id", typeof(int));
+    
+            return ((IObjectContextAdapter)this).ObjectContext.ExecuteFunction<usp_ConsultarProfesorPorDistrito_Result>("usp_ConsultarProfesorPorDistrito", idParameter);
+        }
     }
 }

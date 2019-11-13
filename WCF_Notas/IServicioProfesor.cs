@@ -13,6 +13,13 @@ namespace WCF_Notas
     {
         [OperationContract]
         List<Profesor> ConsultarProfesor(int dni_pro);
+
+        [OperationContract]
+        List<Profesor> ConsultarProfesorPorCurso(int id_curso);
+
+        [OperationContract]
+        List<Profesor> ConsultarProfesorPorDistrito(int id_distrito);
+
     }
 
     [DataContract]
@@ -27,6 +34,7 @@ namespace WCF_Notas
         private string _direccion;
         private string _email;
         private int _idDistrito;
+        private int _idCurso;
 
         [DataMember]
         public int DniPro { get => _dniPro; set => _dniPro = value; }
@@ -43,7 +51,8 @@ namespace WCF_Notas
         [DataMember]
         public int IdDistrito { get => _idDistrito; set => _idDistrito = value; }
 
- 
+        [DataMember]
+        public int IdCurso { get => _idCurso; set => _idCurso = value; }
 
     }
 }

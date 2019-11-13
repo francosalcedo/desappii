@@ -23,6 +23,8 @@ namespace WCF_Notas
         [OperationContract]
         List<Alumno> ConsultarAlumnosMenorDeEdad();
 
+        [OperationContract]
+        List<Alumno> ConsultarAlumnosPorCiclo(int id_ciclo);
     }
 
     [DataContract]
@@ -41,6 +43,8 @@ namespace WCF_Notas
         private string _nacionalidad;
         private int _idCarrera;
         private int _idDistrito;
+        private int _idMatricula;
+        private int _idCiclo;
 
         [DataMember]
         public int dniAlu
@@ -118,5 +122,20 @@ namespace WCF_Notas
             get { return this._idDistrito; }
             set { this._idDistrito = value; }
         }
+
+        [DataMember]
+        public int idMatricula
+        {
+            get { return this._idMatricula; }
+            set { this._idMatricula = value; }
+        }
+
+        [DataMember]
+        public int idCiclo
+        {
+            get { return this._idCiclo; }
+            set { this._idCiclo = value; }
+        }
+
     }
 }

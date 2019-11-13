@@ -37,5 +37,92 @@ namespace WCF_Notas
                 throw ex;
             }
         }
+
+
+
+
+
+
+
+        public List<Profesor> ConsultarProfesorPorCurso(int id_curso)
+        {
+
+            ISILNotasEntities sql = new ISILNotasEntities();
+            List<Profesor> objListaProfesor = new List<Profesor>();
+            try
+            {
+                var query = sql.usp_ConsultarProfesorPorCurso2(id_curso);
+                foreach (var resultado in query)
+                {
+                    Profesor objProfesor = new Profesor();
+
+                    objProfesor.IdCurso = Convert.ToInt32(resultado.id_profesor_curso);
+                    objProfesor.NomPro = resultado.nom_pro;
+
+                    objListaProfesor.Add(objProfesor);
+                }
+                return objListaProfesor;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+
+
+
+
+        public List<Profesor> ConsultarProfesorPorDistrito(int id_distrito)
+
+        {
+
+            ISILNotasEntities sql = new ISILNotasEntities();
+            List<Profesor> objListaProfesor = new List<Profesor>();
+            try
+            {
+                var query = sql.usp_ConsultarProfesorPorDistrito(id_distrito);
+                foreach (var resultado in query)
+                {
+                    Profesor objProfesor = new Profesor();
+                    objProfesor.DniPro = resultado.dni_pro;
+                    objProfesor.AppPro = resultado.app_pro;
+                    objProfesor.ApmPro = resultado.apm_pro;
+                    objProfesor.NomPro = resultado.nom_pro;
+                    objProfesor.Direccion = resultado.direccion;
+                    objProfesor.Email = resultado.email;
+                    objProfesor.IdDistrito = Convert.ToInt32(resultado.id_distrito);
+
+                    objListaProfesor.Add(objProfesor);
+                }
+                return objListaProfesor;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
     }
+
 }

@@ -402,6 +402,12 @@
         <Function Name="usp_ConsultarAlumno" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="dni_alu" Type="int" Mode="In" />
         </Function>
+        <Function Name="usp_ConsultarAlumnoPorCiclo" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_ConsultarAlumnoPorCiclo1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
         <Function Name="usp_ConsultarAlumnosPorDistrito" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id" Type="int" Mode="In" />
         </Function>
@@ -426,6 +432,18 @@
         </Function>
         <Function Name="usp_ConsultarProfesor" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="dni_pro" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_ConsultarProfesorPorCurso" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_ConsultarProfesorPorCurso1" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_ConsultarProfesorPorCurso2" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
+        </Function>
+        <Function Name="usp_ConsultarProfesorPorDistrito" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+          <Parameter Name="id" Type="int" Mode="In" />
         </Function>
         <Function Name="usp_ConsultarSede" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
           <Parameter Name="id_sede" Type="int" Mode="In" />
@@ -1069,7 +1087,25 @@
             <Parameter Name="id_carrera" Mode="In" Type="Int32" />
           </FunctionImport>
           <FunctionImport Name="usp_IncidenciaAlumno" ReturnType="Collection(ISILNotasModel.usp_IncidenciaAlumno_Result)">
-            <Parameter Name="dni_alu" Mode="In" Type="Int32" />
+          <Parameter Name="dni_alu" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ConsultarAlumnoPorCiclo" ReturnType="Collection(ISILNotasModel.usp_ConsultarAlumnoPorCiclo_Result)">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ConsultarAlumnoPorCiclo1" ReturnType="Collection(ISILNotasModel.usp_ConsultarAlumnoPorCiclo1_Result)">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ConsultarProfesorPorCurso" ReturnType="Collection(ISILNotasModel.usp_ConsultarProfesorPorCurso_Result)">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ConsultarProfesorPorCurso1" ReturnType="Collection(ISILNotasModel.usp_ConsultarProfesorPorCurso1_Result)">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ConsultarProfesorPorCurso2" ReturnType="Collection(ISILNotasModel.usp_ConsultarProfesorPorCurso2_Result)">
+          <Parameter Name="id" Mode="In" Type="Int32" />
+          </FunctionImport>
+          <FunctionImport Name="usp_ConsultarProfesorPorDistrito" ReturnType="Collection(ISILNotasModel.usp_ConsultarProfesorPorDistrito_Result)">
+          <Parameter Name="id" Mode="In" Type="Int32" />
           </FunctionImport>
         </EntityContainer>
         <ComplexType Name="sp_helpdiagramdefinition_Result">
@@ -1209,6 +1245,54 @@
           <Property Type="Int32" Name="DNI" Nullable="false" />
           <Property Type="String" Name="Apellidos" Nullable="true" MaxLength="41" />
           <Property Type="String" Name="Nombres" Nullable="true" MaxLength="40" />
+        </ComplexType>
+        <ComplexType Name="usp_ConsultarAlumnoPorCiclo_Result">
+          <Property Type="Int32" Name="id_matricula" Nullable="false" />
+          <Property Type="String" Name="nom_alu" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="email" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="edad" Nullable="true" />
+          <Property Type="String" Name="telefono" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="70" />
+        </ComplexType>
+        <ComplexType Name="usp_ConsultarAlumnoPorCiclo1_Result">
+          <Property Type="Int32" Name="id_matricula" Nullable="false" />
+          <Property Type="DateTime" Name="fecha" Nullable="true" Precision="23" />
+          <Property Type="Int32" Name="dni_alu" Nullable="true" />
+          <Property Type="Int32" Name="id_ciclo" Nullable="true" />
+          <Property Type="Int32" Name="dni_alu1" Nullable="false" />
+          <Property Type="String" Name="app_alu" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="apm_alu" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="nom_alu" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="direccion" Nullable="true" MaxLength="70" />
+          <Property Type="String" Name="telefono" Nullable="true" MaxLength="11" />
+          <Property Type="String" Name="email" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="edad" Nullable="true" />
+          <Property Type="String" Name="nacionalidad" Nullable="true" MaxLength="40" />
+          <Property Type="Int32" Name="id_carrera" Nullable="true" />
+          <Property Type="Int32" Name="id_distrito" Nullable="true" />
+          <Property Type="Int32" Name="id_carrera1" Nullable="false" />
+          <Property Type="String" Name="nombre" Nullable="true" MaxLength="70" />
+        </ComplexType>
+        <ComplexType Name="usp_ConsultarProfesorPorCurso_Result">
+          <Property Type="Int32" Name="id_profesor_curso" Nullable="false" />
+          <Property Type="String" Name="nom_pro" Nullable="true" MaxLength="40" />
+        </ComplexType>
+        <ComplexType Name="usp_ConsultarProfesorPorCurso1_Result">
+          <Property Type="Int32" Name="id_profesor_curso" Nullable="false" />
+          <Property Type="String" Name="nom_pro" Nullable="true" MaxLength="40" />
+        </ComplexType>
+        <ComplexType Name="usp_ConsultarProfesorPorCurso2_Result">
+          <Property Type="Int32" Name="id_profesor_curso" Nullable="false" />
+          <Property Type="String" Name="nom_pro" Nullable="true" MaxLength="40" />
+        </ComplexType>
+        <ComplexType Name="usp_ConsultarProfesorPorDistrito_Result">
+          <Property Type="Int32" Name="dni_pro" Nullable="false" />
+          <Property Type="String" Name="app_pro" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="apm_pro" Nullable="true" MaxLength="20" />
+          <Property Type="String" Name="nom_pro" Nullable="true" MaxLength="40" />
+          <Property Type="String" Name="direccion" Nullable="true" MaxLength="70" />
+          <Property Type="String" Name="email" Nullable="true" MaxLength="50" />
+          <Property Type="Int32" Name="id_distrito" Nullable="true" />
         </ComplexType>
       </Schema>
     </edmx:ConceptualModels>
@@ -1595,6 +1679,78 @@
                 <ScalarProperty Name="DNI" ColumnName="DNI" />
                 <ScalarProperty Name="Apellidos" ColumnName="Apellidos" />
                 <ScalarProperty Name="Nombres" ColumnName="Nombres" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_ConsultarAlumnoPorCiclo" FunctionName="ISILNotasModel.Store.usp_ConsultarAlumnoPorCiclo">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ISILNotasModel.usp_ConsultarAlumnoPorCiclo_Result">
+                <ScalarProperty Name="id_matricula" ColumnName="id_matricula" />
+                <ScalarProperty Name="nom_alu" ColumnName="nom_alu" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="edad" ColumnName="edad" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_ConsultarAlumnoPorCiclo1" FunctionName="ISILNotasModel.Store.usp_ConsultarAlumnoPorCiclo1">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ISILNotasModel.usp_ConsultarAlumnoPorCiclo1_Result">
+                <ScalarProperty Name="id_matricula" ColumnName="id_matricula" />
+                <ScalarProperty Name="fecha" ColumnName="fecha" />
+                <ScalarProperty Name="dni_alu" ColumnName="dni_alu" />
+                <ScalarProperty Name="id_ciclo" ColumnName="id_ciclo" />
+                <ScalarProperty Name="dni_alu1" ColumnName="dni_alu1" />
+                <ScalarProperty Name="app_alu" ColumnName="app_alu" />
+                <ScalarProperty Name="apm_alu" ColumnName="apm_alu" />
+                <ScalarProperty Name="nom_alu" ColumnName="nom_alu" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="telefono" ColumnName="telefono" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="edad" ColumnName="edad" />
+                <ScalarProperty Name="nacionalidad" ColumnName="nacionalidad" />
+                <ScalarProperty Name="id_carrera" ColumnName="id_carrera" />
+                <ScalarProperty Name="id_distrito" ColumnName="id_distrito" />
+                <ScalarProperty Name="id_carrera1" ColumnName="id_carrera1" />
+                <ScalarProperty Name="nombre" ColumnName="nombre" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_ConsultarProfesorPorCurso" FunctionName="ISILNotasModel.Store.usp_ConsultarProfesorPorCurso">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ISILNotasModel.usp_ConsultarProfesorPorCurso_Result">
+                <ScalarProperty Name="id_profesor_curso" ColumnName="id_profesor_curso" />
+                <ScalarProperty Name="nom_pro" ColumnName="nom_pro" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_ConsultarProfesorPorCurso1" FunctionName="ISILNotasModel.Store.usp_ConsultarProfesorPorCurso1">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ISILNotasModel.usp_ConsultarProfesorPorCurso1_Result">
+                <ScalarProperty Name="id_profesor_curso" ColumnName="id_profesor_curso" />
+                <ScalarProperty Name="nom_pro" ColumnName="nom_pro" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_ConsultarProfesorPorCurso2" FunctionName="ISILNotasModel.Store.usp_ConsultarProfesorPorCurso2">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ISILNotasModel.usp_ConsultarProfesorPorCurso2_Result">
+                <ScalarProperty Name="id_profesor_curso" ColumnName="id_profesor_curso" />
+                <ScalarProperty Name="nom_pro" ColumnName="nom_pro" />
+              </ComplexTypeMapping>
+            </ResultMapping>
+          </FunctionImportMapping>
+          <FunctionImportMapping FunctionImportName="usp_ConsultarProfesorPorDistrito" FunctionName="ISILNotasModel.Store.usp_ConsultarProfesorPorDistrito">
+            <ResultMapping>
+              <ComplexTypeMapping TypeName="ISILNotasModel.usp_ConsultarProfesorPorDistrito_Result">
+                <ScalarProperty Name="dni_pro" ColumnName="dni_pro" />
+                <ScalarProperty Name="app_pro" ColumnName="app_pro" />
+                <ScalarProperty Name="apm_pro" ColumnName="apm_pro" />
+                <ScalarProperty Name="nom_pro" ColumnName="nom_pro" />
+                <ScalarProperty Name="direccion" ColumnName="direccion" />
+                <ScalarProperty Name="email" ColumnName="email" />
+                <ScalarProperty Name="id_distrito" ColumnName="id_distrito" />
               </ComplexTypeMapping>
             </ResultMapping>
           </FunctionImportMapping>

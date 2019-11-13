@@ -113,5 +113,38 @@ namespace WCF_Notas
                 throw new Exception(ex.Message);
             }
         }
+
+
+
+        public List<Alumno> ConsultarAlumnosPorCiclo(int id_ciclo)
+
+        {
+
+            ISILNotasEntities sql = new ISILNotasEntities();
+            List<Alumno> objListaAlumno = new List<Alumno>();
+            try
+            {
+                var query = sql.usp_ConsultarAlumnoPorCiclo(id_ciclo);
+                foreach (var resultado in query)
+                {
+                    Alumno objAlumno = new Alumno();
+                    
+                    objAlumno.nomAlu = resultado.nom_alu;
+                    objAlumno.email = resultado.email;
+                    objAlumno.edad = Convert.ToInt32(resultado.edad);
+                    objAlumno.telefono = resultado.telefono;
+
+                    objAlumno.idMatricula = Convert.ToInt32(resultado.id_matricula);
+
+                    objListaAlumno.Add(objAlumno);
+                }
+                return objListaAlumno;
+
+            }
+            catch (Exception ex)
+            {
+                throw new Exception(ex.Message);
+            }
+        }
     }
 }
